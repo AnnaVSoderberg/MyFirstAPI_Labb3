@@ -1,109 +1,109 @@
 # API_Labb3
 
-## Hämta alla intressen
-**Metod:** GET
-**Endpoint:** /api/interests
-**Beskrivning:** Hämtar en lista över alla intressen.
-**Exempelanrop (curl):** 
-  ```bash
-  curl -X 'GET' \
-    'https://localhost:7278/api/Interest' \
-    -H 'accept: */*'
+## Fetch all interests
+**Method:** GET
+**Endpoint:** /api/Interest
+**Description:** Retrieves a list of all interests.
+**Example request (curl):** 
+```bash
+curl -X 'GET' \
+  'https://localhost:7278/api/Interest' \
+  -H 'accept: */*'
 __________________________________________________
-## Lägg till ett nytt intresse till en person
+## Add a new interest to a person
 
-**Metod:** PUT
+**Method:** PUT
 **Endpoint:** /api/Interest/AddNewInterestToPerson
-**Beskrivning:** Lägger till ett nytt intresse till en befintlig person.
-**Parametrar:**
-`interestId`: ID:t för det intresse som ska läggas till.
- `personId`: ID:t för personen som intresset ska läggas till för.
-**Exempelanrop (curl):** 
-  ```bash
-  curl -X 'PUT' \
-    'https://localhost:7278/api/Interest/AddNewInterestToPerson?interestId=1&personId=1' \
-    -H 'accept: */*'
+**Description:** Adds a new interest to an existing person.
+**Parameters:**
+`interestId`: The ID of the interest to be added.
+`personId`: The ID of the person to add the interest to.
+**Example request (curl):** 
+```bash
+curl -X 'PUT' \
+  'https://localhost:7278/api/Interest/AddNewInterestToPerson?interestId=1&personId=1' \
+  -H 'accept: */*'
 __________________________________________________
-## Hämta alla länkar
+## Fetch all links
 
-**Metod:** GET
+**Method:** GET
 **Endpoint:** /api/Link
-**Beskrivning:** Hämtar en lista över alla länkar.
-**Exempelanrop (curl):** 
-  ```bash
-  curl -X 'GET' \
-    'https://localhost:7278/api/Link' \
-    -H 'accept: */*'
+**Description:** Retrieves a list of all links.
+**Example request (curl):** 
+```bash
+curl -X 'GET' \
+  'https://localhost:7278/api/Link' \
+  -H 'accept: */*'
 __________________________________________________
-## Länka en person till ett intresse genom en länk
+## Link a person to an interest through a link
 
-**Metod:** POST
+**Method:** POST
 **Endpoint:** /api/Link/LinkToPersonAndInterest
-**Beskrivning:** Skapar en ny länk mellan en person och ett intresse.
-**Exempelanrop (curl):** 
-  ```bash
-  curl -X 'POST' \
-    'https://localhost:7278/api/Link/LinkToPersonAndInterest' \
-    -H 'accept: */*' \
-    -d ''
+**Description:** Creates a new link between a person and an interest.
+**Example request (curl):** 
+```bash
+curl -X 'POST' \
+  'https://localhost:7278/api/Link/LinkToPersonAndInterest' \
+  -H 'accept: */*' \
+  -d ''
 __________________________________________________
-## Hämta alla personer
+## Fetch all persons
 
-**Metod:** GET
+**Method:** GET
 **Endpoint:** /api/Person
-**Beskrivning:** Hämtar en lista över alla personer.
-**Exempelanrop (curl):** 
-  ```bash
-  curl -X 'GET' \
-    'https://localhost:7278/api/Person' \
-    -H 'accept: */*'
+**Description:** Retrieves a list of all persons.
+**Example request (curl):** 
+```bash
+curl -X 'GET' \
+  'https://localhost:7278/api/Person' \
+  -H 'accept: */*'
 __________________________________________________
-## Skapa en ny person
+## Create a new person
 
-**Metod:** POST
+**Method:** POST
 **Endpoint:** /api/Person
-**Beskrivning:** Skapar en ny person.
+**Description:** Creates a new person.
 **Request Headers:** 
-  - `accept: */*`
-  - `Content-Type: application/json`
+- `accept: */*`
+- `Content-Type: application/json`
 - **Request Body:** 
-  ```json
-  {
-    "personId": 0,
-    "name": "string",
-    "phoneNumber": "string"
-  }
+```json
+{
+  "personId": 0,
+  "name": "string",
+  "phoneNumber": "string"
+}
 __________________________________________________
-## Hämta en specifik person
+## Fetch a specific person
 
-**Metod:** GET
+**Method:** GET
 **Endpoint:** /api/Person/{personId}
-**Beskrivning:** Hämtar information om en specifik person baserat på personens ID.
-**Parametrar:** `personId`: ID:t för den person som ska hämtas.
-**Exempelanrop (curl):** 
-  ```bash
-  curl -X 'GET' \
-    'https://localhost:7278/api/Person/1' \
-    -H 'accept: */*'
+**Description:** Retrieves information about a specific person based on the person's ID.
+**Parameters:** `personId`: The ID of the person to retrieve.
+**Example request (curl):** 
+```bash
+curl -X 'GET' \
+  'https://localhost:7278/api/Person/1' \
+  -H 'accept: */*'
 __________________________________________________
-## Hämta alla länkar för en specifik person
+## Fetch all links for a specific person
 
-**Metod:** GET
+**Method:** GET
 **Endpoint:** /api/Person/GetPersonLinks
-**Beskrivning:** Hämtar alla länkar relaterade till en specifik person.
-**Exempelanrop (curl):** 
-  ```bash
-  curl -X 'GET' \
-    'https://localhost:7278/api/Person/GetPersonLinks' \
-    -H 'accept: */*'
+**Description:** Retrieves all links related to a specific person.
+**Example request (curl):** 
+```bash
+curl -X 'GET' \
+  'https://localhost:7278/api/Person/GetPersonLinks' \
+  -H 'accept: */*'
 __________________________________________________
-## Hämta alla intressen för en specifik person
+## Fetch all interests for a specific person
 
-**Metod:** GET
+**Method:** GET
 **Endpoint:** /api/Person/GetAPersonsInterests
-**Beskrivning:** Hämtar alla intressen relaterade till en specifik person.
-**Exempelanrop (curl):** 
-  ```bash
-  curl -X 'GET' \
-    'https://localhost:7278/api/Person/GetAPersonsInterests' \
-    -H 'accept: */*'
+**Description:** Retrieves all interests related to a specific person.
+**Example request (curl):** 
+```bash
+curl -X 'GET' \
+  'https://localhost:7278/api/Person/GetAPersonsInterests' \
+  -H 'accept: */*'
